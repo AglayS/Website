@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- Tab links-->
+<div class = "tab">
+
+    <button class="tablinks" onClick="openAbout(event, 'Hobbies')">Hobbies</button>
+    <button class="tablinks" onClick="openAbout(event, 'Skills')">Skills</button>
+    <button class="tablinks" onClick="openAbout(event, 'Things I Have Done')">Things I Have Done</button>
+
+</div>
+
+<!--Tab content-->
+<div id="Hobbies" class="tabcontent">
+
+    <!--This next line gives access to the X close button-->
+    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+
+    <h4>Hobbies</h4>
+    <p>My hobbies include cooking and listening to music!</p>
+    <!--images here!-->
+
+</div>
+
+<div id="Skills" class="tabcontent">
+
+    <h3>Skills</h3>
+    <p>Notable skills divided by hard and soft: </p>
+    <p>Hard: 
+
+            <dt>Coding languages, including<p></p></dt>
+
+            <dd>- C, Java, Python (Basic), HTML/CSS/JavaScript<p></p></dd>
+
+        
+
+            <dt>
+
+            Printed Circuit Board Design (Autodesk EAGLE)<p></p>
+
+            </dt>
+
+            <dt>
+
+                Microsoft Office, including <p></p>
+
+            </dt>
+
+            <dd>- Word, PowerPoint, Excel</dd>
+
+            <p>Word was used to write and edit technical documents, PowerPoint for our presentations [refer to "Things I Have Done" Final Presentation link], and Excel for our Bill of Materials.</p>
+
+
+    </p>
+
+
+    <p>Soft: 
+
+        <dt>Leadership<p></p></dt>
+
+        <dd>- Leader of the Smart Baby Monitor project of Summer-Fall 2022 semesters.</dd>
+
+
+
+
+
+
+
+    </p>
+
+<!--Learn to create lists?-->
+
+</div>
+
+<div id="Things I Have Done" class="tabcontent">
+
+    <h2>Things I Have Done</h2>
+    
+    <!--target _blank means opening in new tab, otherwise it will open in the same one tba-->
+    <!--A relative URL does not have the https://www part, so both of these are absolute url-->
+    <a href="https://www.youtube.com/watch?v=tj5FRptTPBI&feature=youtu.be" target="_blank">Final Presentation!</a>
+
+    <p>Above link leads to YouTube video of the final presentation of the Smart Baby Monitor Senior Design Project. Take a look!</p>
+
+    <a href="https://github.com/AglayS" target="_blank">Github Page</a>
+
+    <p>This link takes you to my Github projects!</p>
+
+   
+
+</div>
+
+
+<!----Style the tab-->
+<style>
+
+/*Start CSS*/
+
+.tab {
+
+    overflow: hidden;
+    /*Square box around tabs*/
+    border: 1px solid #ccc; 
+    background-color: #f1f1f1;
+
+}
+
+/* Style buttons used to open tab content*/
+
+.tab button {
+
+    background-color: inherit;
+    float: left;
+    border: 2px dashed rgb(41, 146, 41);
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+
+    background-color: #abc;
+
+}
+
+/*Create active/current tablink class*/
+
+.tab button.active {
+
+    background-color: #ccc;
+
+}
+
+/*Style the tab content*/
+
+.tabcontent {
+
+    display: none;
+    padding: 4px 8px;
+    border: 1px solid black;
+    border-top: none;
+
+}
+
+
+/* Style the close button */
+
+.topright {
+
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+
+}
+
+.topright:hover {color: red;}
+
+</style>
+
+
+<script>
+//Start the JavaScript
+
+function openAbout(evt, hobbies) {
+
+    //Declare all variables
+    var i;
+    var tabcontent;
+    var tablinks;
+
+    //Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+
+    for (i = 0; i < tabcontent.length; i++) {
+
+        tabcontent[i].style.display = "none";
+
+    }
+
+    //Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+
+    for (i = 0; i < tablinks.length; i++) {
+
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+
+    document.getElementById(hobbies).style.display = "block";
+    evt.currentTarget.className += " active";
+
+
+}
+</script>
+
+<head>
+    <!--This is first web page created since my HTML class. How bad can this possibly go?-->
+    <!--Head = Tab (on top of page)-->
+    <title>Welcome to my About Me webpage!</title>
+</head>
+
+<style>
+
+    h1 {color: black; border: 4px solid black; border-color: black;}
+    h2 {color:blueviolet}
+    h3 {color: gold}
+    h4 {color: pink}
+
+</style>
+
+
+
+
+
+  
+
+<body>
+
+
+<!-- Hero image. Each of these are called from the "functions" below-->
+<div class="hero-image">
+    <div class="hero-text">
+      <h1>
+        I am Aglay Saenz
+      </h1>
+      <p>And I'm a Graduate in Computer Engineering</p>
+      <button>Hire me</button>
+    </div>
+</div>
+  
+
+ <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/*This body is specifically for the hero image*/
+body, html {
+
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.hero-image { /*this section is the image itself*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(157, 156, 156, 0.5)), url("Grad_post.jpg"); /*you can see the lighter bottom side of the gradient*/
+  height: 70%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /*just aligning it nicely in the top middle of the page*/
+}
+
+.hero-text { /*text in hero image*/
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button { /*button in hero image*/
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: white;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover { /*let mouse hover over button*/
+  background-color: #555;
+  color: white;
+}
+
+</style>
+ </head>
+
+
+    
+
+    <h1>
+        Personal Information!
+    </h1>
+
+    <p>
+       <h2>Hello there!</h2> 
+    </p>
+
+    <p>
+
+        I am a recent graduate of the University of Central Florida with a Bachelor’s in Computer Engineering. 
+        Through my education my skills range from various coding languages such as C, Java, Python, and HTML/CSS/JavaScript, 
+        to electrical design and construction of printed circuit boards. 
+        Along with these hard skills, I have developed communication and leadership skills through my time as being the leader of my senior design group. I look forward to working with you!
+        Aside from all that seriousness, my hobbies do include cooking and listening to music.
+
+    </p>
+
+    <ul>
+        <b>Contact information:</b>
+        </ul>
+        <ul>
+            <p>
+            <li>
+                <h4> Name: Aglay Saenz</h4>
+            </li>
+            </p>
+            <p>
+                <li>LinkedIn: </li>
+                <a href="https://www.linkedin.com/in/aglay-saenz-72b8b0258/" target="_blank">LinkedIn Link</a>
+            </p>
+            <p>
+            <li>Major completed: Bachelor's in Computer Engineering</li>
+            </p>
+        </ul>
+
+        <p>
+
+           <h3>Thank you for reading!</h3> 
+
+        </p>
+
+        <p>
+
+            <img src= "Grad_post.jpg" width="200" height="300">
+
+        </p>
+
+</body>
